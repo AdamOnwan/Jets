@@ -48,8 +48,8 @@ public abstract class Jet {
 	public void setPrice(long price) {
 		this.price = price;
 	}
-	
-@Override
+
+	@Override
 	public String toString() {
 		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
 	}
@@ -57,7 +57,8 @@ public abstract class Jet {
 	public void fly() {
 		System.out.println("Flying around");
 	}
-	public double mach (double speed) {
+
+	public double mach(double speed) {
 		double mach = speed / 767.269;
 		System.out.println("Jet mach speed is " + mach);
 		return mach;

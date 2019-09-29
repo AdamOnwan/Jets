@@ -3,23 +3,29 @@ package com.skilldistillery.jets.app;
 import java.util.*;
 
 public class JetsApplication {
+	private AirField airField = new AirField();
+	private Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
 		// F i e l d s
 
 		// C o n s t r u c t o r s
-		AirField airField = new AirField();
-		Scanner kb = new Scanner(System.in);
 		
-		airField.readsJets();
+		JetsApplication ja = new JetsApplication();		
 
-		JetsApplication ja = new JetsApplication();
-		ja.launch(kb);
+		ja.launch();
 	}
+	public void gotoAirField() {
+		airField.readsJets();
+		airField.addJets(kb);
+		
+	}
+
 	// M e t h o d s
-	public void launch(Scanner kb) {
+	public void launch() {
 		displayUserMenu(kb);
 	}
+
 	public void displayUserMenu(Scanner kb) {
 		boolean keepGoing = true;
 		while (keepGoing) {
@@ -36,10 +42,10 @@ public class JetsApplication {
 			switch (input) {
 			case 1:
 				System.out.println("List fleet");
+				airField.readsJets();
 				Collection<AirField> jetlist = new ArrayList<>();
 				int numElements = jetlist.size();
 				System.out.println(numElements);
-				
 				break;
 			case 2:
 				System.out.println("Fly all jets");
@@ -59,7 +65,7 @@ public class JetsApplication {
 //				FighterJet.this.dogFight();
 				break;
 			case 7:
-//				airField.addJets(kb);
+				airField.addJets(kb);
 				break;
 			case 8:
 //				airField.remove();
