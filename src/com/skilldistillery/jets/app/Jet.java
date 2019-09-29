@@ -8,7 +8,6 @@ public abstract class Jet {
 	private long price;
 
 	// C on s t r u c t o r s
-//+Jet(String, double, int, long)
 	public Jet(String model, double speed, int range, long price) {
 		super();
 		this.model = model;
@@ -55,11 +54,9 @@ public abstract class Jet {
 		return "Jet [model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "]";
 	}
 
-	//+fly() void
 	public void fly() {
 		System.out.println("Flying around");
 	}
-//+getspeedinmach():double
 	public double mach (double speed) {
 		double mach = speed / 767.269;
 		System.out.println("Jet mach speed is " + mach);
