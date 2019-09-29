@@ -5,11 +5,11 @@ import java.util.*;
 
 public class AirField {
 	// F i e l d s
+	List<Jet> jets = new ArrayList<>();
 	String jetFile = "jets.txt";
 	// C o n s t r u c t o r s
 	public List<Jet> readsJets(){
-		
-		List<Jet> jets = new ArrayList<>();
+		readJets();
 		System.out.println(jets.toString());
 		
 		return jets;
@@ -82,6 +82,7 @@ public class AirField {
 			case 3:
 				Jet commercialAircraft = new CommercialJet("J15", 900_000_000, 90_000, 100_000_000);
 				System.out.println("Commercial Jet has entered the airfield");
+				jets.add(commercialAircraft);
 				break;
 			case 4:
 				keepGoing = false;

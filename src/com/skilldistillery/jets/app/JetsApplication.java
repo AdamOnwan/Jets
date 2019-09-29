@@ -10,6 +10,8 @@ public class JetsApplication {
 		// C o n s t r u c t o r s
 		AirField airField = new AirField();
 		Scanner kb = new Scanner(System.in);
+		
+		airField.readsJets();
 
 		JetsApplication ja = new JetsApplication();
 		ja.launch(kb);
