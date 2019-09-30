@@ -31,9 +31,7 @@ public class JetsApplication {
 			int input = kb.nextInt();
 			switch (input) {
 			case 1:
-				System.out.println("List fleet");
-				String formattedString = airField.jets.toString().replace(", ", "");
-				System.out.println(formattedString);
+				airField.listJets();
 				break;
 			case 2:
 				System.out.println("Fly all jets");

@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 
 public class AirField {
-	List<Jet> jets = new ArrayList<>();
+	private List<Jet> jets = new ArrayList<>();
 	String jetFile = "jets.txt";
 	boolean keepGoing = true;
 
@@ -187,5 +187,11 @@ public class AirField {
 			System.out.println("Bad input");
 		}
 
+	}
+
+	public void listJets() {
+		System.out.println("List fleet");
+		String formattedString = jets.toString().replace(", ", "");
+		System.out.println(formattedString);
 	}
 }
