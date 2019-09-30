@@ -7,6 +7,7 @@ public class AirField {
 	// F i e l d s
 	List<Jet> jets = new ArrayList<>();
 	String jetFile = "jets.txt";
+	boolean keepGoing = true;
 
 	// C o n s t r u c t o r s
 	public List<Jet> readsJets() {
@@ -55,8 +56,8 @@ public class AirField {
 	void carrierJets() {
 		System.out.println(jets.toString());
 	}
+
 	void addJets(Scanner kb) {
-		boolean keepGoing = true;
 		while (keepGoing) {
 			System.out.println("Which jet do you want to add");
 			System.out.println("(1) Cargo Plane");
@@ -68,32 +69,27 @@ public class AirField {
 			switch (input) {
 			case 1:
 
-				Jet cargoAircraft = new CargoPlane("H13", 500_000_000, 50_000, 60_000_000);
-
+				Jet cargoAircraft = new CargoPlane("CargoJetH13", 600, 1_200, 60_000_000);
 				System.out.println("Cargo Plane has entered the airfield");
 				jets.add(cargoAircraft);
-				System.out.println("there is now this many Fighter jets ");
-				System.out.println(jets.size());
-				System.out.println(jets.toString());
-				System.out.println(cargoAircraft.toString());
+				System.out.println("added " + cargoAircraft.toString());
+				System.out.println("Your fleet size is now " + jets.size());
 				break;
 			case 2:
-				Jet fighterAircraft = new FighterJet("F11", 100_000_000, 10_000, 20_000_000);
-				System.out.println("Fighter Jet has entered the airfield");
+				Jet fighterAircraft = new FighterJet("FighterJetF11", 3800, 3_000, 20_000_000);
 				jets.add(fighterAircraft);
-				System.out.println("there is now this many Fighter jets ");
-				System.out.println(jets.size());
-				System.out.println(jets.toString());
+				System.out.println("added " + fighterAircraft.toString());
+				System.out.println("Your fleet size is now " + jets.size());
 				break;
 			case 3:
-				Jet commercialAircraft = new CommercialJet("J15", 900_000_000, 90_000, 100_000_000);
+				Jet commercialAircraft = new CommercialJet("CommercialJetJ15", 800, 2_000, 100_000_000);
 				System.out.println("Commercial Jet has entered the airfield");
 				jets.add(commercialAircraft);
-				System.out.println("there is now this many Commercial jets ");
-				System.out.println(jets.size());
-				System.out.println(jets.toString());
+				System.out.println("added " + commercialAircraft.toString());
+				System.out.println("Your fleet size is now " + jets.size());
 				break;
 			case 4:
+			default:
 				keepGoing = false;
 				System.out.println("Returning to main menu");
 				break;
@@ -102,17 +98,44 @@ public class AirField {
 		}
 
 	}
+	public void fly() {
+		for (Jet jet : jets) {
+			jet.fly();
+		}
+	}
 	public void dogFight() {
 		for (Jet jet : jets) {
 			if (jet instanceof FighterJet) {
 				((FighterJet) jet).dogFight();
 			}
-			
+
+		}
+	}
+
+	public void loadCargo() {
+		for (Jet jet : jets) {
+			if (jet instanceof CargoPlane) {
+				((CargoPlane) jet).loadCargo();
+			}
 		}
 	}
 
 	public void removeJet(Scanner kb) {
+		while (keepGoing) {
+			System.out.println("Current list of jets");
+			System.out.println(jets.toString());
+			System.out.println("Please select which type of jet to remove");
+			System.out.println("(1) CargoPlane (2) FighterJet (3) CommercialJet");
+			String input = kb.next();
+			switch (input) {
+			case "1":
+				jets.remove(1);
+				break;
+			default:
+				keepGoing = false;
+			}
+		}
 		System.out.println("removing");
-		
+
 	}
 }

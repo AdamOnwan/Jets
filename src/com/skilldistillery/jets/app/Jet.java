@@ -54,12 +54,13 @@ public abstract class Jet {
 	}
 
 	public void fly() {
-		System.out.println("Flying around");
+		System.out.println(model + " is flying around");
 	}
 
 	public double mach(double speed) {
 		double mach = speed / 767.269;
-		System.out.println("Jet mach speed is " + mach);
+		System.out.printf("%.2f", mach);
+//		System.out.println("Jet mach speed is " + mach);
 		return mach;
 	}
 

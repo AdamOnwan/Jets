@@ -1,5 +1,5 @@
 package com.skilldistillery.jets.app;
 
 interface CargoCarrier {
-//+loadCargo():void
+	public void loadCargo();
 }

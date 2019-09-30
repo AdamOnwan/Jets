@@ -10,15 +10,16 @@ public class JetsApplication {
 		// F i e l d s
 
 		// C o n s t r u c t o r s
-		
-		JetsApplication ja = new JetsApplication();		
+
+		JetsApplication ja = new JetsApplication();
 
 		ja.launch();
 	}
+
 	public void gotoAirField() {
 		airField.readsJets();
 		airField.addJets(kb);
-		
+
 	}
 
 	// M e t h o d s
@@ -44,14 +45,13 @@ public class JetsApplication {
 			case 1:
 				System.out.println("List fleet");
 //				airField.readsJets();
-				Collection<AirField> jetlist = new ArrayList<>();
-				System.out.println(airField.toString());
+				System.out.println(airField.jets.toString());
 //				int numElements = jetlist.size();
 //				System.out.println(numElements);
 				break;
 			case 2:
 				System.out.println("Fly all jets");
-//				Jet.this.fly();
+				airField.fly();
 				break;
 			case 3:
 				System.out.println("View fastest jet");
@@ -60,8 +60,7 @@ public class JetsApplication {
 				System.out.println("View jet with longest range");
 				break;
 			case 5:
-//				CargoPlane.this.loadCargo();
-				System.out.println("Load all Cargo Jets");
+				airField.loadCargo();
 				break;
 			case 6:
 				airField.dogFight();
@@ -70,7 +69,7 @@ public class JetsApplication {
 				airField.addJets(kb);
 				break;
 			case 8:
-//				airField.remove();
+				airField.removeJet(kb);
 				break;
 			case 9:
 				System.out.println("Goodbye");
