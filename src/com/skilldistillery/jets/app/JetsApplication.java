@@ -55,6 +55,8 @@ public class JetsApplication {
 				break;
 			case 3:
 				System.out.println("View fastest jet");
+//				airField.fastestJet();
+				System.out.println(airField.fastestJet());
 				break;
 			case 4:
 				System.out.println("View jet with longest range");

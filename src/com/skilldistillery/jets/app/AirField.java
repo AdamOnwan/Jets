@@ -98,11 +98,27 @@ public class AirField {
 		}
 
 	}
+
 	public void fly() {
 		for (Jet jet : jets) {
 			jet.fly();
 		}
 	}
+
+	public String fastestJet() {
+
+		String fastestJet = "";
+		double fastest = 0;
+		for (Jet jet : jets) {
+			if (jet.getSpeed() > fastest) {
+				fastest = jet.getSpeed();
+				fastestJet = jet.toString();
+
+			}
+		}
+		return fastestJet;
+	}
+
 	public void dogFight() {
 		for (Jet jet : jets) {
 			if (jet instanceof FighterJet) {
@@ -121,21 +137,13 @@ public class AirField {
 	}
 
 	public void removeJet(Scanner kb) {
-		while (keepGoing) {
-			System.out.println("Current list of jets");
-			System.out.println(jets.toString());
-			System.out.println("Please select which type of jet to remove");
-			System.out.println("(1) CargoPlane (2) FighterJet (3) CommercialJet");
-			String input = kb.next();
-			switch (input) {
-			case "1":
-				jets.remove(1);
-				break;
-			default:
-				keepGoing = false;
-			}
+		System.out.println("Current list of jets");
+		System.out.println(jets.toString() + jets.size());
+		for (int i = 0; i < jets.size(); i++) {
+			int index = i;
+			jets.remove(index);
+
 		}
-		System.out.println("removing");
 
 	}
 }
