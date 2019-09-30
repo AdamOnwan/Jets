@@ -102,6 +102,14 @@ public class AirField {
 		}
 
 	}
+	public void dogFight() {
+		for (Jet jet : jets) {
+			if (jet instanceof FighterJet) {
+				((FighterJet) jet).dogFight();
+			}
+			
+		}
+	}
 
 	public void removeJet(Scanner kb) {
 		System.out.println("removing");

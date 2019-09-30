@@ -7,7 +7,6 @@ public class FighterJet extends Jet implements CombatReady {
 	}
 
 	public void dogFight() {
-		this.dogFight();
-		System.out.println("Dogfighting now");
+		System.out.println(getModel() + " dogfighting now");
 	}
 }

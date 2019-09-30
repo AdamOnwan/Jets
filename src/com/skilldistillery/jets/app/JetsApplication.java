@@ -23,6 +23,7 @@ public class JetsApplication {
 
 	// M e t h o d s
 	public void launch() {
+		airField.readsJets();
 		displayUserMenu(kb);
 	}
 
@@ -42,9 +43,9 @@ public class JetsApplication {
 			switch (input) {
 			case 1:
 				System.out.println("List fleet");
-				airField.readsJets();
+//				airField.readsJets();
 				Collection<AirField> jetlist = new ArrayList<>();
-				airField.toString();
+				System.out.println(airField.toString());
 //				int numElements = jetlist.size();
 //				System.out.println(numElements);
 				break;
@@ -63,7 +64,7 @@ public class JetsApplication {
 				System.out.println("Load all Cargo Jets");
 				break;
 			case 6:
-//				FighterJet.this.dogFight();
+				airField.dogFight();
 				break;
 			case 7:
 				airField.addJets(kb);
