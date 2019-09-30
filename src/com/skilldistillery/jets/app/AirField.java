@@ -69,7 +69,7 @@ public class AirField {
 			switch (input) {
 			case 1:
 
-				Jet cargoAircraft = new CargoPlane("CargoJetH13", 600, 1_200, 60_000_000);
+				Jet cargoAircraft = new CargoPlane("CargoJetH13", 600, 3_800, 60_000_000);
 				System.out.println("Cargo Plane has entered the airfield");
 				jets.add(cargoAircraft);
 				System.out.println("added " + cargoAircraft.toString());
@@ -117,6 +117,19 @@ public class AirField {
 			}
 		}
 		return fastestJet;
+	}
+	public String longestRangeJet() {
+		
+		String longestRangeJet = "";
+		int longestRange = 0;
+		for (Jet jet : jets) {
+			if (jet.getRange() > longestRange) {
+				longestRange = jet.getRange();
+				longestRangeJet = jet.toString();
+				
+			}
+		}
+		return longestRangeJet;
 	}
 
 	public void dogFight() {

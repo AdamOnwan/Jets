@@ -44,10 +44,7 @@ public class JetsApplication {
 			switch (input) {
 			case 1:
 				System.out.println("List fleet");
-//				airField.readsJets();
 				System.out.println(airField.jets.toString());
-//				int numElements = jetlist.size();
-//				System.out.println(numElements);
 				break;
 			case 2:
 				System.out.println("Fly all jets");
@@ -55,11 +52,11 @@ public class JetsApplication {
 				break;
 			case 3:
 				System.out.println("View fastest jet");
-//				airField.fastestJet();
 				System.out.println(airField.fastestJet());
 				break;
 			case 4:
 				System.out.println("View jet with longest range");
+				System.out.println(airField.longestRangeJet());
 				break;
 			case 5:
 				airField.loadCargo();
