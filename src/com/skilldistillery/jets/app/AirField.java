@@ -54,6 +54,18 @@ public class AirField {
 		System.out.println(jets.toString());
 	}
 
+//	void jetStats (Scanner kb) {
+//		System.out.println("Enter Jet model ");
+//		String model = kb.next();
+//		System.out.println("Enter jet speed ");
+//		double speed = kb.nextDouble();
+//		System.out.println("Enter jet range ");
+//		int range = kb.nextInt();
+//		System.out.println("Enter jet price ");
+//		long price = kb.nextLong();
+//	return model, speed, range, price;
+//	}
+
 	void addJets(Scanner kb) {
 		while (keepGoing) {
 			System.out.println("Which jet do you want to add");
@@ -64,20 +76,44 @@ public class AirField {
 			int input = kb.nextInt();
 			switch (input) {
 			case 1:
-				Jet cargoAircraft = new CargoPlane("CargoJetH13", 600, 3_800, 60_000_000);
+				System.out.println("Enter Jet model ");
+				String model = kb.next();
+				System.out.println("Enter jet speed ");
+				double speed = kb.nextDouble();
+				System.out.println("Enter jet range ");
+				int range = kb.nextInt();
+				System.out.println("Enter jet price ");
+				long price = kb.nextLong();
+				Jet cargoAircraft = new CargoPlane(model, speed, range, price);
 				System.out.println("Cargo Plane has entered the airfield");
 				jets.add(cargoAircraft);
 				System.out.println("added " + cargoAircraft.toString());
 				System.out.println("Your fleet size is now " + jets.size());
 				break;
 			case 2:
-				Jet fighterAircraft = new FighterJet("FighterJetF11", 3800, 3_000, 20_000_000);
+				System.out.println("Enter Jet model ");
+				model = kb.next();
+				System.out.println("Enter jet speed ");
+				speed = kb.nextDouble();
+				System.out.println("Enter jet range ");
+				range = kb.nextInt();
+				System.out.println("Enter jet price ");
+				price = kb.nextLong();
+				Jet fighterAircraft = new FighterJet(model, speed, range, price);
 				jets.add(fighterAircraft);
 				System.out.println("added " + fighterAircraft.toString());
 				System.out.println("Your fleet size is now " + jets.size());
 				break;
 			case 3:
-				Jet commercialAircraft = new CommercialJet("CommercialJetJ15", 800, 2_000, 100_000_000);
+				System.out.println("Enter Jet model ");
+				model = kb.next();
+				System.out.println("Enter jet speed ");
+				speed = kb.nextDouble();
+				System.out.println("Enter jet range ");
+				range = kb.nextInt();
+				System.out.println("Enter jet price ");
+				price = kb.nextLong();
+				Jet commercialAircraft = new CommercialJet(model, speed, range, price);
 				System.out.println("Commercial Jet has entered the airfield");
 				jets.add(commercialAircraft);
 				System.out.println("added " + commercialAircraft.toString());
