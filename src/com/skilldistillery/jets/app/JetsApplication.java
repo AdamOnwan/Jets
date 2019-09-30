@@ -44,8 +44,9 @@ public class JetsApplication {
 				System.out.println("List fleet");
 				airField.readsJets();
 				Collection<AirField> jetlist = new ArrayList<>();
-				int numElements = jetlist.size();
-				System.out.println(numElements);
+				airField.toString();
+//				int numElements = jetlist.size();
+//				System.out.println(numElements);
 				break;
 			case 2:
 				System.out.println("Fly all jets");

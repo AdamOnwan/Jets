@@ -27,7 +27,19 @@ public class AirField {
 				double speed = Double.parseDouble(jetRecord[1]);
 				int range = Integer.parseInt(jetRecord[2]);
 				long price = Long.parseLong(jetRecord[3]);
-				System.out.println("Read the line: " + line);
+				System.out.println(line);
+				if (line.contains("Fighter")) {
+					Jet a = new FighterJet(model, speed, range, price);
+					jets.add(a);
+				}
+				if (line.contains("Cargo")) {
+					Jet b = new CargoPlane(model, speed, range, price);
+					jets.add(b);
+				}
+				if (line.contains("Commercial")) {
+					Jet c = new CommercialJet(model, speed, range, price);
+					jets.add(c);
+				}
 			}
 			br.close();
 		} catch (FileNotFoundException e) {
@@ -39,20 +51,6 @@ public class AirField {
 		}
 		System.out.println(jetFile);
 	}
-//	private void readJets(String jetFile) {
-//		try (BufferedReader bufIn = new BufferedReader(new FileReader(jetFile))) {
-//			String line;
-//			while ((line = bufIn.readLine()) != null) {
-//				String[] jetRecord = line.split(", ");
-//				String model = jetRecord[0];
-//				double speed = Double.parseDouble(jetRecord[1]);
-//				int range = Integer.parseInt(jetRecord[2]);
-//				long price = Long.parseLong(jetRecord[3]);
-//			}
-//		} catch (IOException e) {
-//			System.err.println(e);
-//		}
-//	}
 
 	void carrierJets() {
 		System.out.println(jets.toString());
@@ -107,6 +105,6 @@ public class AirField {
 
 	public void removeJet(Scanner kb) {
 		System.out.println("removing");
-
+		
 	}
 }
