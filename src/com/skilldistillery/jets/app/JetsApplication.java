@@ -11,11 +11,6 @@ public class JetsApplication {
 		ja.launch();
 	}
 
-	public void gotoAirField() {
-		airField.readsJets();
-		airField.addJets(kb);
-	}
-
 	public void launch() {
 		airField.readsJets();
 		displayUserMenu(kb);
@@ -37,7 +32,8 @@ public class JetsApplication {
 			switch (input) {
 			case 1:
 				System.out.println("List fleet");
-				System.out.println(airField.jets.toString());
+				String formattedString = airField.jets.toString().replace(", ", "");
+				System.out.println(formattedString);
 				break;
 			case 2:
 				System.out.println("Fly all jets");

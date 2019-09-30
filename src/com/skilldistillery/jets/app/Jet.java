@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 public abstract class Jet {
 	// F i e l d s
 	DecimalFormat df = new DecimalFormat("#.00");
+
 	private String model;
 	private double speed;
 	private int range;
@@ -53,7 +54,7 @@ public abstract class Jet {
 	}
 
 	public String toString() {
-		return "Jet model=" + model + ", machSpeed=" + df.format(mach(speed)) + ", range=" + range + ", price="
+		return "Jet model=" + model + "  machSpeed=" + df.format(mach(speed)) + "  range=" + range + "  price="
 				+ df.format(price) + "" + "\n";
 	}
 

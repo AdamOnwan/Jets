@@ -10,7 +10,6 @@ public class AirField {
 
 	public List<Jet> readsJets() {
 		readJets();
-		System.out.println(jets.toString());
 		return jets;
 	}
 
@@ -25,7 +24,6 @@ public class AirField {
 				double speed = Double.parseDouble(jetRecord[1]);
 				int range = Integer.parseInt(jetRecord[2]);
 				long price = Long.parseLong(jetRecord[3]);
-				System.out.println(line);
 				if (line.contains("Fighter")) {
 					Jet a = new FighterJet(model, speed, range, price);
 					jets.add(a);
@@ -49,11 +47,6 @@ public class AirField {
 		}
 		System.out.println(jetFile);
 	}
-
-	void carrierJets() {
-		System.out.println(jets.toString());
-	}
-
 //	void jetStats (Scanner kb) {
 //		System.out.println("Enter Jet model ");
 //		String model = kb.next();
@@ -178,10 +171,21 @@ public class AirField {
 
 	public void removeJet(Scanner kb) {
 		System.out.println("Current list of jets");
-		System.out.println(jets.toString() + jets.size());
-		for (int i = 0; i < jets.size(); i++) {
-			int index = i;
-			jets.remove(index);
+		int i = -1;
+		for (Jet jet : jets) {
+			i++;
+			System.out.println("index= " + i);
+			System.out.println(jet.toString());
 		}
+		try {
+			int index = kb.nextInt();
+			jets.remove(index);
+		} catch (InputMismatchException e) {
+			e.getMessage();
+			System.out.println("Bad input");
+		} catch (Exception e) {
+			System.out.println("Bad input");
+		}
+
 	}
 }
