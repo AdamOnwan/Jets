@@ -1,7 +1,10 @@
 package com.skilldistillery.jets.app;
 
+import java.text.DecimalFormat;
+
 public abstract class Jet {
 	// F i e l d s
+	DecimalFormat df = new DecimalFormat("#.00");
 	private String model;
 	private double speed;
 	private int range;
@@ -50,17 +53,18 @@ public abstract class Jet {
 	}
 
 	public String toString() {
-		return "Jet model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + "" + "\n";
+		return "Jet model=" + model + ", machSpeed=" + df.format(mach(speed)) + ", range=" + range + ", price="
+				+ df.format(price) + "" + "\n";
 	}
 
 	public void fly() {
-		System.out.println(model + " is flying around");
+		System.out.println(model + " is flying around at " + speed + "MPH");
+		double airTime = getRange() / getSpeed();
+		System.out.println("will land before this " + df.format(airTime) + " many hours\n");
 	}
 
 	public double mach(double speed) {
 		double mach = speed / 767.269;
-		System.out.printf("%.2f", mach);
-//		System.out.println("Jet mach speed is " + mach);
 		return mach;
 	}
 

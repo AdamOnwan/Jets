@@ -4,16 +4,13 @@ import java.io.*;
 import java.util.*;
 
 public class AirField {
-	// F i e l d s
 	List<Jet> jets = new ArrayList<>();
 	String jetFile = "jets.txt";
 	boolean keepGoing = true;
 
-	// C o n s t r u c t o r s
 	public List<Jet> readsJets() {
 		readJets();
 		System.out.println(jets.toString());
-
 		return jets;
 	}
 
@@ -65,10 +62,8 @@ public class AirField {
 			System.out.println("(3) Commercial Jet");
 			System.out.println("(4) Main Menu");
 			int input = kb.nextInt();
-
 			switch (input) {
 			case 1:
-
 				Jet cargoAircraft = new CargoPlane("CargoJetH13", 600, 3_800, 60_000_000);
 				System.out.println("Cargo Plane has entered the airfield");
 				jets.add(cargoAircraft);
@@ -106,27 +101,24 @@ public class AirField {
 	}
 
 	public String fastestJet() {
-
 		String fastestJet = "";
 		double fastest = 0;
 		for (Jet jet : jets) {
 			if (jet.getSpeed() > fastest) {
 				fastest = jet.getSpeed();
 				fastestJet = jet.toString();
-
 			}
 		}
 		return fastestJet;
 	}
+
 	public String longestRangeJet() {
-		
 		String longestRangeJet = "";
 		int longestRange = 0;
 		for (Jet jet : jets) {
 			if (jet.getRange() > longestRange) {
 				longestRange = jet.getRange();
 				longestRangeJet = jet.toString();
-				
 			}
 		}
 		return longestRangeJet;
@@ -137,7 +129,6 @@ public class AirField {
 			if (jet instanceof FighterJet) {
 				((FighterJet) jet).dogFight();
 			}
-
 		}
 	}
 
@@ -155,8 +146,6 @@ public class AirField {
 		for (int i = 0; i < jets.size(); i++) {
 			int index = i;
 			jets.remove(index);
-
 		}
-
 	}
 }

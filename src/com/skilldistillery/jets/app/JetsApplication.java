@@ -7,22 +7,15 @@ public class JetsApplication {
 	private Scanner kb = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		// F i e l d s
-
-		// C o n s t r u c t o r s
-
 		JetsApplication ja = new JetsApplication();
-
 		ja.launch();
 	}
 
 	public void gotoAirField() {
 		airField.readsJets();
 		airField.addJets(kb);
-
 	}
 
-	// M e t h o d s
 	public void launch() {
 		airField.readsJets();
 		displayUserMenu(kb);
